@@ -8,7 +8,7 @@ export const fetchBillsData = async (
   search: string = ""
 ) => {
   let route = `${
-    process.env.VITE_REACT_APP_API_URL
+    import.meta.env.VITE_REACT_APP_API_URL
   }bills?_page=${currentPage}&_per_page=${perPage}&_sort=-created_at`;
 
   if (search) {
@@ -16,7 +16,7 @@ export const fetchBillsData = async (
   }
 
   if (id) {
-    route = `${process.env.VITE_REACT_APP_API_URL}bills/${id}`;
+    route = `${import.meta.env.VITE_REACT_APP_API_URL}bills/${id}`;
   }
 
   const response = await axios.get(route);
