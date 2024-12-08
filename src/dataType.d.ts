@@ -5,6 +5,7 @@ export interface Bill {
     date: string,
     bill_data: BillData[],
     total: number,
+    bank_detail: number,
     created_at: string,
     updated_at: string,
 }

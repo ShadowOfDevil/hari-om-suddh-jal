@@ -253,6 +253,127 @@ const ViewBill = ({ id, isOpen, onClose }: ViewBillProps) => {
                   </section>
                   {/* Table Section End */}
 
+                  {/* Name Section Start */}
+                  {bill.bank_detail != 0 && (
+                    <section className="box-border border-t-2 border-blue-950">
+                      <div className="w-full text-blue-950 text-xl font-semibold p-2">
+                        Bank Detail:
+                      </div>
+                      {bill.bank_detail == 1 ? (
+                        <div className="flex flex-col gap-1 w-full pt-0 p-2">
+                          <span className="text-blue-950 font-semibold">
+                            Name:{" "}
+                            <span className="font-normal text-blue-600">
+                              Sanajaykumar Ishwarbhai Patel
+                            </span>
+                          </span>
+                          <span className="text-blue-950 font-semibold">
+                            Bank:{" "}
+                            <span className="font-normal text-blue-600">
+                              Bank Of Baroda
+                            </span>
+                          </span>
+                          <span className="text-blue-950 font-semibold">
+                            A/C No.:{" "}
+                            <span className="font-normal text-blue-600">
+                              18680200000066
+                            </span>
+                          </span>
+                          <span className="text-blue-950 font-semibold">
+                            IFSC Code:{" "}
+                            <span className="font-normal text-blue-600">
+                              BARB0ZAROLI
+                            </span>
+                          </span>
+                        </div>
+                      ) : bill.bank_detail == 2 ? (
+                        <div className="flex flex-col gap-1 w-full pt-0 p-2">
+                          <span className="text-blue-950 font-semibold">
+                            Name:{" "}
+                            <span className="font-normal text-blue-600">
+                              Sanajaykumar Ishwarbhai Patel
+                            </span>
+                          </span>
+                          <span className="text-blue-950 font-semibold">
+                            Bank:{" "}
+                            <span className="font-normal text-blue-600">
+                              State Bank Of India
+                            </span>
+                          </span>
+                          <span className="text-blue-950 font-semibold">
+                            A/C No.:{" "}
+                            <span className="font-normal text-blue-600">
+                              30158943805
+                            </span>
+                          </span>
+                          <span className="text-blue-950 font-semibold">
+                            IFSC Code:{" "}
+                            <span className="font-normal text-blue-600">
+                              SBIN0007096
+                            </span>
+                          </span>
+                        </div>
+                      ) : bill.bank_detail == 3 ? (
+                        <div className="flex flex-col gap-1 w-full pt-0 p-2">
+                          <span className="text-blue-950 font-semibold">
+                            Name:{" "}
+                            <span className="font-normal text-blue-600">
+                              Sanajaykumar Ishwarbhai Patel
+                            </span>
+                          </span>
+                          <span className="text-blue-950 font-semibold">
+                            Bank:{" "}
+                            <span className="font-normal text-blue-600">
+                              Bank Of Baroda
+                            </span>
+                          </span>
+                          <span className="text-blue-950 font-semibold">
+                            A/C No.:{" "}
+                            <span className="font-normal text-blue-600">
+                              18680100001156
+                            </span>
+                          </span>
+                          <span className="text-blue-950 font-semibold">
+                            IFSC Code:{" "}
+                            <span className="font-normal text-blue-600">
+                              BARB0ZAROLI
+                            </span>
+                          </span>
+                        </div>
+                      ) : bill.bank_detail == 4 ? (
+                        <div className="flex flex-col gap-1 w-full pt-0 p-2">
+                          <span className="text-blue-950 font-semibold">
+                            Name:{" "}
+                            <span className="font-normal text-blue-600">
+                              Sanajaykumar Ishwarbhai Patel
+                            </span>
+                          </span>
+                          <span className="text-blue-950 font-semibold">
+                            Bank:{" "}
+                            <span className="font-normal text-blue-600">
+                              Bank Of Baroda
+                            </span>
+                          </span>
+                          <span className="text-blue-950 font-semibold">
+                            A/C No.:{" "}
+                            <span className="font-normal text-blue-600">
+                              02420100011328
+                            </span>
+                          </span>
+                          <span className="text-blue-950 font-semibold">
+                            IFSC Code:{" "}
+                            <span className="font-normal text-blue-600">
+                              BARB0BHILAD
+                            </span>
+                          </span>
+                        </div>
+                      ) : (
+                        ""
+                      )}
+                    </section>
+                  )}
+                  {/* Name Section Start */}
+
                   {/* Footer Section Start */}
                   <section className="p-2 pb-10 border-t-2 border-blue-950 text-end text-blue-950 text-xl font-semibold">
                     For HARI OM SUDDHA JAL

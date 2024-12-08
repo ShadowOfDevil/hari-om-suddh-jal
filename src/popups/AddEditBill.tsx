@@ -18,6 +18,7 @@ export interface BillFormData {
   name: string;
   date: string;
   total: number;
+  bank_detail: number;
   created_at: string;
 }
 
@@ -34,6 +35,7 @@ const AddEditBill = ({
     name: "",
     date: "",
     total: 0,
+    bank_detail: 0,
     created_at: "",
   });
   const [elements, setElements] = useState<BillData[]>([]);
@@ -42,7 +44,7 @@ const AddEditBill = ({
 
   const fetchLatestBill = async () => {
     try {
-      const response = await fetchBillsData('', 1, 1);
+      const response = await fetchBillsData("", 1, 1);
 
       if (response.data.data.length) {
         const billNumber = response.data.data[0].bill_no;
@@ -70,6 +72,7 @@ const AddEditBill = ({
           name: response.data.name,
           date: response.data.date,
           total: response.data.total,
+          bank_detail: response.data.bank_detail,
           created_at: response.data.created_at,
         };
         setFormData(newFormData);
@@ -184,6 +187,7 @@ const AddEditBill = ({
         name: formData.name,
         date: formData.date,
         total: formData.total,
+        bank_detail: formData.bank_detail,
         bill_data: elements,
         created_at: formData.created_at
           ? formData.created_at
@@ -220,6 +224,26 @@ const AddEditBill = ({
             <h2 className="text-2xl font-bold">
               {id ? "Edit Bill" : "Add Bill"}
             </h2>
+
+            <button
+              type="button"
+              className="text-gray-600 hover:text-gray-900"
+              onClick={onClose}
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M6 18L18 6M6 6l12 12"
+                ></path>
+              </svg>
+            </button>
           </div>
 
           {/* Modal Body */}
@@ -272,6 +296,73 @@ const AddEditBill = ({
                     onChange={(e) => handleInputChange(e)}
                   />
                 </div>
+              </div>
+              <div className="mb-4">
+                <label className="block text-gray-700 mb-2">Bank Detail</label>
+                {/* Bank-1 */}
+                <label className="flex items-center p-4 border rounded-lg cursor-pointer transition hover:shadow-md bg-white mb-2">
+                  <span className="flex items-center gap-3">
+                    <span className="text-gray-800 font-medium">
+                      Bank Of Baroda: 18680200000066
+                    </span>
+                  </span>
+                  <input
+                    type="radio"
+                    name="bank_detail"
+                    value="1"
+                    className="ml-auto w-5 h-5"
+                    checked={formData.bank_detail == 1}
+                    onChange={(e) => handleInputChange(e)}
+                  />
+                </label>
+                {/* Bank-2 */}
+                <label className="flex items-center p-4 border rounded-lg cursor-pointer transition hover:shadow-md bg-white mb-2">
+                  <span className="flex items-center gap-3">
+                    <span className="text-gray-800 font-medium">
+                      State Bank Of India: 30158943805
+                    </span>
+                  </span>
+                  <input
+                    type="radio"
+                    name="bank_detail"
+                    value="2"
+                    className="ml-auto w-5 h-5"
+                    checked={formData.bank_detail == 2}
+                    onChange={(e) => handleInputChange(e)}
+                  />
+                </label>
+                {/* Bank-3 */}
+                <label className="flex items-center p-4 border rounded-lg cursor-pointer transition hover:shadow-md bg-white mb-2">
+                  <span className="flex items-center gap-3">
+                    <span className="text-gray-800 font-medium">
+                      Bank Of Baroda: 18680100001156
+                    </span>
+                  </span>
+                  <input
+                    type="radio"
+                    name="bank_detail"
+                    value="3"
+                    className="ml-auto w-5 h-5"
+                    checked={formData.bank_detail == 3}
+                    onChange={(e) => handleInputChange(e)}
+                  />
+                </label>
+                {/* Bank-4 */}
+                <label className="flex items-center p-4 border rounded-lg cursor-pointer transition hover:shadow-md bg-white">
+                  <span className="flex items-center gap-3">
+                    <span className="text-gray-800 font-medium">
+                      Bank Of Baroda: 02420100011328
+                    </span>
+                  </span>
+                  <input
+                    type="radio"
+                    name="bank_detail"
+                    value="4"
+                    className="ml-auto w-5 h-5"
+                    checked={formData.bank_detail == 4}
+                    onChange={(e) => handleInputChange(e)}
+                  />
+                </label>
               </div>
 
               <hr className="mb-4 border-gray-300" />
